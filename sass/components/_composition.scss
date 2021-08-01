@@ -1,0 +1,35 @@
+.composition {
+    position: relative;
+    &__picture {
+        width: 55%;
+        box-shadow: 0 2rem 4rem rgba($grey-color, $alpha: .4);
+        border-radius: 2px;
+        position: absolute;
+        transition: all .3s;
+        &--top {
+            top: 0rem;
+            left: 0%;
+            z-index: 1;
+        }
+        &--md {
+            top: 5rem;
+            left: 40%;
+            z-index: 2;
+        }
+        &--bm {
+            top: 10rem;
+            left: 20%;
+            z-index: 3;
+        }
+        &:hover {
+            transform: scale(1.5);
+            z-index: 4;
+            padding: 2rem;
+            border: 6px solid $primary-color;
+            box-shadow: 0 2.5rem 4rem rgba($grey-color, $alpha: .6);
+        }
+    }
+    &:hover &__picture:not(:hover) {
+        transform: scale(.9);
+    }
+}

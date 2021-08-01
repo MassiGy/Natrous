@@ -1,0 +1,40 @@
+.footer {
+    background-color: #333;
+    padding: 10rem 0;
+    &__navigation {
+        float: left;
+        width: 80%;
+        border-top: darken($color: $grey-color-light, $amount: 40%) solid 2px;
+        padding-top: 2rem;
+        @include respond(tab-land) {
+            float: none;
+            width: 100%;
+        }
+    }
+    &__text {
+        float: right;
+        width: 80%;
+        border-top: darken($grey-color-light, 40%) solid 2px;
+        padding-top: 2rem;
+        @include respond(tab-land) {
+            float: none;
+            width: 100%;
+        }
+    }
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+        transition: all .2s;
+        &:not(:last-child) {
+            margin-right: .8rem;
+        }
+        &:hover {
+            box-shadow: 0 1rem 4rem rgba($color: #000, $alpha: .6);
+            color: $primary-color;
+            background-color: #333;
+            transform: scale(1.4) skewY(5deg);
+        }
+    }
+}

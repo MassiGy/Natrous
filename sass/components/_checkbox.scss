@@ -1,0 +1,38 @@
+.checkbox {
+    margin-left: -1.5rem;
+    width: 45%;
+    display: inline-block;
+    &__costum-radio {
+        cursor: pointer;
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 5px solid $primary-color;
+        position: absolute;
+        left: 0%;
+        top: -0.4rem;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            background-color: $primary-color;
+            @include center-xy;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+    &__radio-label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 3.5rem;
+    }
+    &__radio-input {
+        visibility: hidden;
+    }
+    &__radio-input:checked~&__radio-label &__costum-radio::after {
+        opacity: 1;
+    }
+}

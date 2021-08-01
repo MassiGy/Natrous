@@ -1,0 +1,56 @@
+.story {
+    margin: 10rem auto 15rem auto;
+    width: 70%;
+    background-color: rgba($color: $white-color, $alpha: .3);
+    padding: 6rem 6rem 6rem 9rem;
+    box-shadow: 0 2rem 4rem rgba($color: $grey-color, $alpha: .6);
+    transform: skewX(-12deg);
+    @include respond(tab-portry) {
+        width: 100% !important;
+        padding: 3rem 6rem;
+    }
+    @include respond(phone) {
+        transform: skewX(0deg);
+    }
+    &__author {
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        @include respond(phone) {
+            transform: translateX(-3.5rem) skewX(0deg);
+        }
+    }
+    &__img {
+        height: 100%;
+        width: 100%;
+        transition: all .4s;
+    }
+    &__text {
+        transform: skewX(12deg);
+        backface-visibility: hidden;
+        @include respond(phone) {
+            transform: skewX(0deg);
+        }
+    }
+    &__caption {
+        text-transform: uppercase;
+        color: $white-color;
+        font-size: 1.5rem;
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        transition: all .4s;
+        backface-visibility: hidden;
+    }
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

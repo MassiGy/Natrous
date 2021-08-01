@@ -1,0 +1,34 @@
+.header {
+    position: relative;
+    height: 95vh;
+    /* give the header 95% of the view port height */
+    background-image: linear-gradient(to right bottom, rgba($primary-color, 0.8), rgba($primary-color-darken, 0.8)), url(https://natours.netlify.app/img/hero.jpg);
+    background-size: cover;
+    /* always fit all the header space*/
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    /* clip-path propretie helps us to draw shapes in the view port(the page), and that is perfromed with multiple functions, one of them is the 
+        polygon fn, this one takes 4 points (four arguments) of the selected element, and generaly they are the extremums, and change thier coordinates to change the shape
+        of the element box!.
+        Note the order matters:  1          2
+                                 4          3
+       */
+    @include respond(tab-portry) {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    }
+    @media only screen and (max-width:37.5em),
+    (max-width: 75em) and (max-resolution:100dpi) {
+        background-image: linear-gradient(to right bottom, rgba($primary-color, 0.8), rgba($primary-color-darken, 0.8)), url(https://natours.netlify.app/img/hero-small.jpg);
+        background-size: cover;
+        background-position: top;
+    }
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        height: 4.5rem;
+        animation: moveUp 1.5s;
+    }
+}

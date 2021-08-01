@@ -1,0 +1,63 @@
+.u-center-text {
+    //center relativly to the x (==>) axe
+    text-align: center !important;
+}
+
+.u-center-text-xy {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.u-m-auto-x {
+    margin: 0 auto !important;
+}
+
+.u-m-auto {
+    margin: auto !important;
+}
+
+.u-max-width {
+    width: 100%;
+}
+
+.u-ml-md {
+    margin-left: 6rem !important;
+}
+
+.u-ml-xl {
+    margin-left: 10rem !important;
+}
+
+.u-mb-xxl {
+    margin-bottom: 10rem !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 6rem !important;
+}
+
+.u-mb-md {
+    margin-bottom: 4rem !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 1rem !important;
+}
+
+.u-mt-sm {
+    margin-top: 1rem !important;
+}
+
+.u-mt-md {
+    margin-top: 4rem !important;
+}
+
+.u-mt-xl {
+    margin-top: 6rem !important;
+}
+
+.u-mt-xxl {
+    margin-top: 14rem !important;
+}

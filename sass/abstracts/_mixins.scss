@@ -1,0 +1,73 @@
+@mixin universalFormating {
+    font-size: initial;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin clearFix {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+@mixin text-gradiant {
+    display: inline-block;
+    background-image: linear-gradient(to right, $primary-color-lighten, $primary-color-darken);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin text-bg-gradiant($direction, $firstcol, $secondcl) {
+    background-image: linear-gradient(to $direction, $firstcol, $secondcl);
+    background-size: cover;
+}
+
+@mixin center-xy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Responsiv Design Manager  */
+
+// Usual breakpoints and also keep in mind that in media query em = rem = defaut browser font size = 16px for desktop first strategy
+//  so 1em = 16px for now
+
+/*
+phone       - 0 to 600 px
+tab-port    - 600px to 900px
+tba-land    - 900px to 1200px
+laptops     - 1200px to 1800px (normal design implimentation)
+big desktops - 1800px and higher
+
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tab-portry {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+        ;
+    }
+}

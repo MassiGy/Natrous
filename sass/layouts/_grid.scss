@@ -1,0 +1,35 @@
+        .row {
+            width: $grid-width;
+            margin: 0 auto;
+            @include respond(tab-portry) {
+                width: $grid-width-sm;
+            }
+            @include respond(tab-portry) {
+                padding: 0 3rem;
+            }
+            @include clearFix;
+            [class^="col-"] {
+                float: left;
+                padding: 0;
+                &:not(:last-child) {
+                    margin-right: $grid-mr;
+                    @include respond(tab-portry) {
+                        margin-right: 0 !important;
+                    }
+                }
+                @include respond(tab-portry) {
+                    width: 100% !important;
+                    margin: 0 auto;
+                    margin-bottom: $grid-mb;
+                }
+            }
+            .col-6 {
+                width: calc((100% - #{$grid-mr})/2);
+            }
+            .col-4 {
+                width: calc((100% - 2*#{$grid-mr})/3);
+            }
+            .col-3 {
+                width: calc((100% - 3*#{$grid-mr})/4);
+            }
+        }

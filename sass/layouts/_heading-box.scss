@@ -1,0 +1,13 @@
+.heading-box {
+    position: absolute;
+    backface-visibility: hidden;
+    top: 50%;
+    /*this is relative to the parent element*/
+    left: 50%;
+    /*this is relative to the parent element*/
+    transform: translate(-50%, -50%);
+    /*this is relative to the element itself*/
+    /* so basicaly this code (heading-box styles) will make this box location starts at the center of the header at first (remove the third line to see it), and the transforme will shift back the element (the box), by the half of it height and the half of it width
+            so now the center of the header is the same as the center of this box, which means that this box is centred in the header element!
+            */
+}

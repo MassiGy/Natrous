@@ -1,0 +1,36 @@
+.section-about {
+    background-color: $grey-color-light;
+    margin-top: -25vh;
+    padding: 30rem 0 50rem 0;
+}
+
+.section-feature {
+    margin-top: -20vh;
+    padding: 25rem 0;
+    background-image: linear-gradient(to right bottom, rgba($primary-color, 0.8), rgba($primary-color-darken, 0.8));
+    background-size: cover;
+    transform: skewY(-7deg);
+    &>* {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    padding: 45rem 0 15rem 0;
+    background-color: $grey-color-light;
+    margin-top: -25vh;
+}
+
+.section-stories {
+    background-color: $grey-color-light;
+    padding: 15rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-booking {
+    @include text-bg-gradiant(right bottom, $primary-color-lighten, $primary-color-darken);
+    height: 100vh;
+    padding: 15rem 0;
+    position: relative;
+}

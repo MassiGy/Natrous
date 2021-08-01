@@ -1,0 +1,105 @@
+.popup {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    background-color: rgba($color: $grey-color, $alpha: .9);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s ease;
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__content {
+        position: relative;
+        display: inline-block;
+        background-color: $white-color;
+        width: 90%;
+        height: 90%;
+        border-radius: 3px;
+        box-shadow: 0 2rem 4rem rgba($color: #000, $alpha: .4);
+        @include respond(tab-land) {
+            width: 96%;
+            height: 90%;
+        }
+        @include respond(phone) {
+            width: 96%;
+            height: 96vh;
+        }
+    }
+    &__text {
+        width: 70%;
+        height: 100%;
+        margin: 0 auto;
+        float: left;
+        @include respond(tab-land) {
+            width: 100%;
+            height: 65%;
+            margin-top: -11%;
+        }
+        @include respond(tab-portry) {
+            height: 100%;
+            width: 75%;
+            margin-top: -13.5%;
+        }
+        @include respond(phone) {
+            width: 160%;
+        }
+        .row {
+            width: 75%;
+            @include respond(tab-land) {
+                width: $grid-width;
+                padding-left: 3.6rem;
+            }
+            @include respond(tab-portry) {
+                width: $grid-width-sm;
+                margin-left: 10rem;
+                padding: 0;
+            }
+             :last-child {
+                padding-left: 3rem !important;
+                border-left: solid 2px lighten($color: $grey-color, $amount: 30%);
+                @include respond(tab-portry) {
+                    border: none;
+                    padding-left: 0 !important;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__galery {
+        height: 100%;
+        width: 30%;
+        float: left;
+        background-color: #333;
+        @include respond(tab-land) {
+            width: 100%;
+            height: 35%;
+            float: none;
+        }
+        @include respond(tab-portry) {
+            height: 100%;
+            width: 25%;
+            float: right;
+        }
+        @include respond(phone) {
+            display: none;
+        }
+    }
+    &__closer {
+        font-size: 2.5rem;
+        position: absolute;
+        top: 3.5rem;
+        right: 2.5rem;
+        text-decoration: none;
+        color: $grey-color;
+        transition: all .2s;
+        &:hover {
+            color: $primary-color;
+            transform: scale(1.4);
+        }
+    }
+}

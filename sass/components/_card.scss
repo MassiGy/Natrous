@@ -1,0 +1,172 @@
+                    .card {
+                        perspective: 150rem;
+                        -moz-perspective: 150rem;
+                        height: 52rem;
+                        width: 100%;
+                        margin: 0 auto;
+                        &__side {
+                            height: 52rem;
+                            backface-visibility: hidden;
+                            width: 100%;
+                            border-radius: 3px;
+                            overflow: hidden;
+                            box-shadow: 0 2rem 4rem rgba($color: $grey-color, $alpha: .6);
+                            transition: all .8s ease;
+                            &--back {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                transform: rotateY(-180deg);
+                                &--orange {
+                                    background-image: linear-gradient(to right bottom, $secondary-color-lighten, $secondary-color-darken);
+                                }
+                                &--green {
+                                    background-image: linear-gradient(to right bottom, $primary-color-lighten, $primary-color-darken);
+                                }
+                                &--purple {
+                                    background-image: linear-gradient(to right bottom, $thertiary-color-lighten, $thertiary-color-darken);
+                                }
+                            }
+                        }
+                        &__picture {
+                            width: 100%;
+                            height: 23rem;
+                            background-size: cover;
+                            background-blend-mode: screen;
+                            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+                            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+                            &--orange {
+                                background-image: linear-gradient(to right bottom, $secondary-color-lighten, $secondary-color-darken), url(https://natours.netlify.app/img/nat-5.jpg);
+                            }
+                            &--green {
+                                background-image: linear-gradient(to right bottom, $primary-color-lighten, $primary-color-darken), url(https://natours.netlify.app/img/nat-6.jpg);
+                            }
+                            &--purple {
+                                background-image: linear-gradient(to right bottom, $thertiary-color-lighten, $thertiary-color-darken), url(https://natours.netlify.app/img/nat-7.jpg);
+                            }
+                        }
+                        &__details {
+                            ul {
+                                display: inline;
+                                list-style: none;
+                                font-size: 1.2rem;
+                                li {
+                                    width: 80%;
+                                    margin: 0 auto;
+                                    padding: 1rem 0;
+                                    &:not(:last-child) {
+                                        border-bottom: 1px solid rgba($color: $grey-color, $alpha: 0.2);
+                                    }
+                                }
+                            }
+                        }
+                        &__heading {
+                            text-transform: uppercase;
+                            font-size: 2.5rem;
+                            font-weight: 300;
+                            color: $white-color;
+                            position: absolute;
+                            top: 13rem;
+                            right: 1rem;
+                            width: 75%;
+                            text-align: right;
+                            padding: 1rem 1.5rem;
+                            box-decoration-break: clone;
+                        }
+                        &__heading-span {
+                            padding: 1rem 1.5rem;
+                            box-decoration-break: clone;
+                            &--purple {
+                                @include text-bg-gradiant(right, $thertiary-color-lighten, $thertiary-color-darken);
+                            }
+                            &--orange {
+                                @include text-bg-gradiant(right, $secondary-color-lighten, $secondary-color-darken);
+                            }
+                            &--green {
+                                @include text-bg-gradiant(right, $primary-color-lighten, $primary-color-darken);
+                            }
+                        }
+                        &__price-box {
+                            color: $white-color;
+                            @include center-xy;
+                            &__text {
+                                font-size: 2rem;
+                            }
+                            &__price {
+                                font-size: 6rem;
+                                font-weight: 100;
+                            }
+                        }
+                        &:hover &__side--front {
+                            transform: rotateY(180deg);
+                        }
+                        &:hover &__side--back {
+                            transform: rotateY(0);
+                        }
+                    }
+                    
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //** To seperate  things a bit!
+                    //
+                    //
+                    //
+                    //
+                    //
+                    // we did not used the @include respond because we can costumize it as a media query,
+                    //
+                    @media only screen and (max-width: 56.25em),
+                    only screen and (hover:none) {
+                        .card {
+                            height: auto;
+                            border-radius: 3px;
+                            backface-visibility: hidden;
+                            overflow: hidden !important;
+                            box-shadow: 0 2rem 4rem rgba($color: $grey-color, $alpha: .6);
+                            &__side {
+                                border-radius: none;
+                                box-shadow: none;
+                                height: auto;
+                                &--front {
+                                    position: relative !important;
+                                }
+                                &--back {
+                                    position: relative !important;
+                                    top: 0;
+                                    left: 0;
+                                    border-radius: 0 !important;
+                                    margin-top: -12%;
+                                    transform: rotateY(0deg);
+                                    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+                                    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+                                    &--orange {
+                                        background-image: linear-gradient(to right bottom, $secondary-color-lighten, $secondary-color-darken);
+                                    }
+                                    &--green {
+                                        background-image: linear-gradient(to right bottom, $primary-color-lighten, $primary-color-darken);
+                                    }
+                                    &--purple {
+                                        background-image: linear-gradient(to right bottom, $thertiary-color-lighten, $thertiary-color-darken);
+                                    }
+                                }
+                            }
+                            &__price-box {
+                                color: $white-color;
+                                position: relative !important;
+                                top: 0;
+                                left: 0;
+                                transform: translate(0);
+                                padding: 4rem 0;
+                                &__price {
+                                    margin-bottom: 2rem !important;
+                                }
+                            }
+                            &:hover &__side--front {
+                                transform: rotateY(0deg);
+                            }
+                        }
+                    }

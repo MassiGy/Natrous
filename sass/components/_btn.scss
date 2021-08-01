@@ -1,0 +1,86 @@
+.btn {
+    background-color: #fff;
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 2rem;
+        display: inline-block;
+        transition: all .2s;
+        border-radius: 10rem;
+        position: relative;
+        //** for real button and not anchor tags
+        border: none;
+        cursor: pointer;
+    }
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        &::after {
+            /*this will styles the element under at the hover of the selected one*/
+            transform: scale(1.5);
+            /* this will change the size and will make it grow up */
+            opacity: 0;
+        }
+    }
+    &:active,
+    &::after {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+    &::after {
+        /* this will create an element under the selected one*/
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        /* the position absolute propretie will set the position of the element to absolute compared to the first
+                                                parent element with a position set to relative*/
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &--white {
+        color: $grey-color;
+        background-color: $white-color;
+        &::after {
+            /* this will style the element ender the selected one*/
+            background-color: $white-color;
+        }
+    }
+    &--green {
+        color: $white-color;
+        background-color: $primary-color;
+        &::after {
+            /* this will style the element ender the selected one*/
+            background-color: $primary-color;
+        }
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        display: inline-block;
+        color: $primary-color;
+        border-bottom: 1px solid $primary-color;
+        padding: 3px;
+        transition: all .3s;
+    }
+    &:hover {
+        transform: translateY(-0.3rem);
+        color: $white-color;
+        background-color: $primary-color;
+        box-shadow: 0 1rem 2rem rgba($grey-color, $alpha: .6);
+    }
+    &:active {
+        box-shadow: 0 1rem 2rem rgba($grey-color, $alpha: .6);
+        transform: translateY(-0.1rem);
+    }
+}
